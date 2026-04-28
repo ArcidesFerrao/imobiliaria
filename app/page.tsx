@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function JGTSLandingLight() {
+export default function JGTSLandingGreen() {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const isDark = theme === "dark";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -12,35 +13,23 @@ export default function JGTSLandingLight() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const isDark = theme === "dark";
 
   return (
     <>
-      <style>{`
-        @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap");
-      `}</style>
-
-      {/* Apply theme to body */}
-      <style>{`body { }`}</style>
-      <div
-        className={isDark ? "dark-wrapper" : "light-wrapper"}
-        style={{ display: "contents" }}
-      >
-        <style>{`body { background: var(--bg); }`}</style>
-      </div>
-
-      {/* Inject theme class on mount */}
       <ThemeApplier theme={theme} />
+
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+        
+      `}</style>
 
       {/* THEME TOGGLE */}
       <button
         className="theme-toggle"
         onClick={() => setTheme(isDark ? "light" : "dark")}
-        title="Alternar tema"
       >
         {isDark ? "☀️" : "🌙"}
       </button>
@@ -57,9 +46,9 @@ export default function JGTSLandingLight() {
           <li>
             <a onClick={() => scrollTo("sobre")}>Sobre</a>
           </li>
-          <li>
+          {/* <li>
             <a onClick={() => scrollTo("valores")}>Valores</a>
-          </li>
+          </li> */}
           <li>
             <a onClick={() => scrollTo("contacto")}>Contacto</a>
           </li>
@@ -80,10 +69,8 @@ export default function JGTSLandingLight() {
             O imóvel certo
             <br />
             <span className="line-indent">
-              para <em>cada</em>
+              para <em>cada sonho.</em>
             </span>
-            <br />
-            sonho.
           </h1>
           <p className="hero-desc fade-up delay-2">
             Avaliações profissionais, compra, venda e arrendamento de imóveis —
@@ -119,15 +106,15 @@ export default function JGTSLandingLight() {
           <div className="hero-right-inner">
             <div className="hero-arch">
               <svg
-                className="arch-house-svg"
                 width="140"
                 height="160"
                 viewBox="0 0 100 120"
                 fill="none"
+                style={{ opacity: 0.13 }}
               >
                 <path
                   d="M50 5 L95 45 L85 45 L85 110 L60 110 L60 80 L40 80 L40 110 L15 110 L15 45 L5 45 Z"
-                  stroke="#A8803A"
+                  stroke="#1D7A48"
                   strokeWidth="1.5"
                   fill="none"
                 />
@@ -136,7 +123,7 @@ export default function JGTSLandingLight() {
                   y="60"
                   width="16"
                   height="24"
-                  stroke="#A8803A"
+                  stroke="#1D7A48"
                   strokeWidth="0.8"
                   fill="none"
                 />
@@ -145,7 +132,7 @@ export default function JGTSLandingLight() {
                   y1="60"
                   x2="50"
                   y2="84"
-                  stroke="#A8803A"
+                  stroke="#1D7A48"
                   strokeWidth="0.5"
                 />
                 <line
@@ -153,7 +140,7 @@ export default function JGTSLandingLight() {
                   y1="72"
                   x2="58"
                   y2="72"
-                  stroke="#A8803A"
+                  stroke="#1D7A48"
                   strokeWidth="0.5"
                 />
               </svg>
@@ -179,10 +166,10 @@ export default function JGTSLandingLight() {
             .map((_, i) => (
               <span key={i} className="marquee-item">
                 Compra <span className="marquee-dot" /> Venda{" "}
-                <span className="marquee-dot" /> Arrendamento{" "}
-                <span className="marquee-dot" /> Avaliação{" "}
-                <span className="marquee-dot" /> Terrenos{" "}
-                <span className="marquee-dot" /> Investimento
+                <span className="marquee-dot" />
+                Arrendamento <span className="marquee-dot" /> Avaliação{" "}
+                <span className="marquee-dot" />
+                Terrenos <span className="marquee-dot" /> Investimento
               </span>
             ))}
         </div>
@@ -191,7 +178,7 @@ export default function JGTSLandingLight() {
       {/* SLOGAN */}
       <div className="slogan-section">
         <div className="slogan-side-label">
-          Tagline
+          Icone
           <br />
           oficial
           <br />
@@ -283,12 +270,12 @@ export default function JGTSLandingLight() {
                     y="60"
                     width="90"
                     height="65"
-                    stroke="#A8803A"
+                    stroke="#1D7A48"
                     strokeWidth="1"
                   />
                   <path
                     d="M50 10 L95 60 L5 60 Z"
-                    stroke="#A8803A"
+                    stroke="#1D7A48"
                     strokeWidth="1"
                     fill="none"
                   />
@@ -297,7 +284,7 @@ export default function JGTSLandingLight() {
                     y="88"
                     width="24"
                     height="37"
-                    stroke="#A8803A"
+                    stroke="#1D7A48"
                     strokeWidth="0.7"
                     fill="none"
                   />
@@ -306,7 +293,7 @@ export default function JGTSLandingLight() {
                     y="75"
                     width="22"
                     height="18"
-                    stroke="#A8803A"
+                    stroke="#1D7A48"
                     strokeWidth="0.5"
                     fill="none"
                   />
@@ -315,7 +302,7 @@ export default function JGTSLandingLight() {
                     y="75"
                     width="22"
                     height="18"
-                    stroke="#A8803A"
+                    stroke="#1D7A48"
                     strokeWidth="0.5"
                     fill="none"
                   />
@@ -327,14 +314,13 @@ export default function JGTSLandingLight() {
               <span className="about-float-label">Empresa Individual</span>
             </div>
           </div>
-
           <div>
             <div className="label-tag">Sobre a JGTS</div>
             <h2 className="sec-title">
               Trabalhamos para <em>encontrar</em>
               <br />o imóvel certo
             </h2>
-            <div className="gold-line" />
+            <div className="green-line" />
             <p
               style={{
                 fontSize: "15px",
@@ -474,7 +460,7 @@ export default function JGTSLandingLight() {
               Por que escolher
               <br />a <em>JGTS?</em>
             </h2>
-            <div className="gold-line" />
+            <div className="green-line" />
             <p
               style={{
                 fontSize: "14px",
@@ -633,7 +619,6 @@ export default function JGTSLandingLight() {
   );
 }
 
-// Helper to apply theme class to body
 function ThemeApplier({ theme }: { theme: "light" | "dark" }) {
   useEffect(() => {
     document.body.className = theme;

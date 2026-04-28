@@ -31,39 +31,48 @@
 } */
 
 /* ─── LIGHT THEME ─── */
-body.light {
-  --bg: #faf8f4;
-  --bg2: #f2efe8;
-  --bg3: #eae5da;
-  --bg4: #e0d9cc;
-  --surface: #ffffff;
-  --text: #1a1612;
-  --text-2: #3d352c;
-  --text-muted: #8c7e6e;
-  --border: rgba(0, 0, 0, 0.08);
-  --gold: #a8803a;
-  --gold-2: #c9a84c;
-  --gold-pale: #ece0c1;
-  --navy: #1e2b4a;
-  --terracotta: #c4613a;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ─── DARK THEME ─── */
+/* ── LIGHT ── */
+body.light {
+  --bg: #f4f8f5;
+  --bg2: #ebf2ed;
+  --bg3: #deeae1;
+  --bg4: #cfe0d4;
+  --surface: #ffffff;
+  --text: #0f1a12;
+  --text-2: #253b2b;
+  --text-muted: #6b8272;
+  --border: rgba(0, 0, 0, 0.08);
+  --green: #1d7a48;
+  --green-2: #26a362;
+  --green-light: #40c47a;
+  --green-pale: #dff2e8;
+  --green-dark: #0f4a2a;
+  --forest: #133d22;
+}
+
+/* ── DARK ── */
 body.dark {
-  --bg: #0d0d0d;
-  --bg2: #141414;
-  --bg3: #1c1c1c;
-  --bg4: #242424;
-  --surface: #1c1c1c;
-  --text: #f0ede6;
-  --text-2: #d4cfc6;
-  --text-muted: #8a8072;
+  --bg: #090e0b;
+  --bg2: #0f1812;
+  --bg3: #152019;
+  --bg4: #1c2a21;
+  --surface: #152019;
+  --text: #e8f2eb;
+  --text-2: #c4d9ca;
+  --text-muted: #6b9175;
   --border: rgba(255, 255, 255, 0.07);
-  --gold: #c9a84c;
-  --gold-2: #e8c97a;
-  --gold-pale: #2a2218;
-  --navy: #2a3a5c;
-  --terracotta: #d4725a;
+  --green: #2ecc71;
+  --green-2: #40d882;
+  --green-light: #5ee896;
+  --green-pale: #0f2a18;
+  --green-dark: #1a8a4a;
+  --forest: #0a1f10;
 }
 
 body {
@@ -73,15 +82,11 @@ body {
   font-weight: 300;
   overflow-x: hidden;
   transition:
-    background 0.4s ease,
-    color 0.4s ease;
+    background 0.4s,
+    color 0.4s;
 }
 
-.cormorant {
-  font-family: "Cormorant Garamond", serif;
-}
-
-/* ── THEME TOGGLE ── */
+/* ── TOGGLE ── */
 .theme-toggle {
   position: fixed;
   bottom: 32px;
@@ -90,7 +95,7 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--green);
   border: none;
   cursor: pointer;
   display: flex;
@@ -118,7 +123,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all 0.4s ease;
+  transition: all 0.4s;
 }
 nav.scrolled {
   background: var(--surface);
@@ -134,7 +139,7 @@ nav.scrolled {
   color: var(--text);
 }
 .nav-logo-accent {
-  color: var(--gold);
+  color: var(--green);
 }
 .nav-center {
   display: flex;
@@ -159,7 +164,7 @@ nav.scrolled {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--gold);
+  background: var(--green);
   transition: width 0.3s;
 }
 .nav-center a:hover {
@@ -169,7 +174,7 @@ nav.scrolled {
   width: 100%;
 }
 .nav-cta {
-  background: var(--navy);
+  background: var(--green);
   color: #fff;
   padding: 11px 28px;
   font-family: "DM Sans", sans-serif;
@@ -183,13 +188,13 @@ nav.scrolled {
   transition: all 0.3s;
 }
 .nav-cta:hover {
-  background: var(--gold);
+  background: var(--green-dark);
   transform: translateY(-1px);
 }
 
 /* ── HERO ── */
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   display: grid;
   grid-template-columns: 55% 45%;
   position: relative;
@@ -198,21 +203,21 @@ nav.scrolled {
 .hero-bg-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.025;
+  opacity: 0.03;
   background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 48px,
-      var(--text) 48px,
-      var(--text) 49px
+      var(--green) 48px,
+      var(--green) 49px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 48px,
-      var(--text) 48px,
-      var(--text) 49px
+      var(--green) 48px,
+      var(--green) 49px
     );
   pointer-events: none;
 }
@@ -228,8 +233,8 @@ nav.scrolled {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--gold-pale);
-  color: var(--gold);
+  background: var(--green-pale);
+  color: var(--green);
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.25em;
@@ -237,7 +242,7 @@ nav.scrolled {
   padding: 7px 16px;
   margin-bottom: 36px;
   width: fit-content;
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--green);
 }
 .hero-title {
   font-family: "Cormorant Garamond", serif;
@@ -250,7 +255,7 @@ nav.scrolled {
 }
 .hero-title em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--green);
   font-weight: 400;
 }
 .hero-title .line-indent {
@@ -271,7 +276,7 @@ nav.scrolled {
   margin-bottom: 64px;
 }
 .btn-filled {
-  background: var(--navy);
+  background: var(--green);
   color: #fff;
   padding: 15px 36px;
   font-family: "DM Sans", sans-serif;
@@ -285,7 +290,7 @@ nav.scrolled {
   transition: all 0.3s;
 }
 .btn-filled:hover {
-  background: var(--gold);
+  background: var(--green-dark);
   transform: translateY(-2px);
 }
 .btn-outline {
@@ -303,10 +308,9 @@ nav.scrolled {
   transition: all 0.3s;
 }
 .btn-outline:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--green);
+  color: var(--green);
 }
-
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
@@ -316,7 +320,6 @@ nav.scrolled {
   background: var(--bg2);
   color: var(--text-muted);
   font-size: 11px;
-  font-weight: 400;
   letter-spacing: 0.08em;
   padding: 6px 14px;
   border-radius: 2px;
@@ -325,11 +328,12 @@ nav.scrolled {
   cursor: default;
 }
 .tag:hover {
-  background: var(--gold-pale);
-  color: var(--gold);
-  border-color: var(--gold);
+  background: var(--green-pale);
+  color: var(--green);
+  border-color: var(--green);
 }
 
+/* ── HERO RIGHT ── */
 .hero-right {
   position: relative;
   background: var(--bg2);
@@ -340,7 +344,7 @@ nav.scrolled {
 }
 .hero-right-inner {
   width: 100%;
-  height: 100%;
+  height: 70%;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -348,7 +352,7 @@ nav.scrolled {
 }
 .hero-arch {
   position: absolute;
-  top: 80px;
+  /* top: 80px; */
   left: 50%;
   transform: translateX(-50%);
   width: 280px;
@@ -360,9 +364,6 @@ nav.scrolled {
   align-items: center;
   justify-content: center;
 }
-.arch-house-svg {
-  opacity: 0.12;
-}
 .hero-card {
   position: absolute;
   bottom: 60px;
@@ -371,7 +372,7 @@ nav.scrolled {
   padding: 24px 28px;
   min-width: 220px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
-  border-bottom: 3px solid var(--gold);
+  border-bottom: 3px solid var(--green);
 }
 .hero-card-label {
   font-size: 10px;
@@ -384,7 +385,7 @@ nav.scrolled {
   font-family: "Cormorant Garamond", serif;
   font-size: 28px;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--green);
   line-height: 1;
   margin-bottom: 4px;
 }
@@ -396,7 +397,7 @@ nav.scrolled {
   position: absolute;
   top: 60px;
   right: 40px;
-  background: var(--gold);
+  background: var(--green);
   color: #fff;
   padding: 16px 20px;
   text-align: center;
@@ -417,16 +418,14 @@ nav.scrolled {
   margin-top: 4px;
 }
 
-/* ── MARQUEE BAND ── */
+/* ── MARQUEE ── */
 .marquee-band {
-  background: var(--navy);
+  background: var(--forest);
   padding: 18px 0;
   overflow: hidden;
-  position: relative;
 }
 .marquee-track {
   display: flex;
-  gap: 0;
   animation: marquee 28s linear infinite;
   white-space: nowrap;
 }
@@ -439,20 +438,20 @@ nav.scrolled {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
 }
 .marquee-dot {
   width: 4px;
   height: 4px;
-  background: var(--gold);
+  background: var(--green);
   border-radius: 50%;
   flex-shrink: 0;
 }
 @keyframes marquee {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
@@ -460,19 +459,19 @@ nav.scrolled {
 /* ── SLOGAN ── */
 .slogan-section {
   padding: 100px 64px;
-  background: var(--gold-pale);
+  background: var(--green-pale);
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 80px;
   align-items: center;
-  border-top: 1px solid rgba(168, 128, 58, 0.15);
-  border-bottom: 1px solid rgba(168, 128, 58, 0.15);
+  border-top: 1px solid rgba(29, 122, 72, 0.15);
+  border-bottom: 1px solid rgba(29, 122, 72, 0.15);
 }
 .slogan-side-label {
   font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--green);
   line-height: 1.6;
 }
 .slogan-quote {
@@ -491,13 +490,23 @@ nav.scrolled {
   left: 0;
   top: -12px;
   font-size: 100px;
-  color: var(--gold);
-  opacity: 0.25;
+  color: var(--green);
+  opacity: 0.2;
   line-height: 1;
   font-style: normal;
 }
+.slogan-quote::after {
+  content: ' "';
+  font-size: 100px;
+  color: var(--green);
+  opacity: 0.2;
+  line-height: 0;
+  vertical-align: -48px;
+  font-style: normal;
+  font-family: "Cormorant Garamond", serif;
+}
 
-/* ── SECTIONS BASE ── */
+/* ── SECTION BASE ── */
 .section {
   padding: 100px 64px;
 }
@@ -516,14 +525,14 @@ nav.scrolled {
   font-weight: 500;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--green);
   margin-bottom: 18px;
 }
 .label-tag::before {
   content: "";
   width: 24px;
   height: 1px;
-  background: var(--gold);
+  background: var(--green);
 }
 .sec-title {
   font-family: "Cormorant Garamond", serif;
@@ -536,13 +545,13 @@ nav.scrolled {
 }
 .sec-title em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--green);
   font-weight: 400;
 }
-.gold-line {
+.green-line {
   width: 48px;
   height: 2px;
-  background: var(--gold);
+  background: var(--green);
   margin: 24px 0;
 }
 
@@ -579,7 +588,7 @@ nav.scrolled {
   left: 0;
   width: 3px;
   height: 0;
-  background: var(--gold);
+  background: var(--green);
   transition: height 0.4s ease;
 }
 .service-card:hover {
@@ -592,8 +601,8 @@ nav.scrolled {
   font-family: "Cormorant Garamond", serif;
   font-size: 56px;
   font-weight: 300;
-  color: var(--gold);
-  opacity: 0.2;
+  color: var(--green);
+  opacity: 0.4;
   line-height: 1;
   margin-bottom: 20px;
 }
@@ -630,7 +639,7 @@ nav.scrolled {
 .about-frame-inner {
   position: absolute;
   inset: 24px;
-  border: 1px solid rgba(168, 128, 58, 0.2);
+  border: 1px solid rgba(29, 122, 72, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -639,7 +648,7 @@ nav.scrolled {
   position: absolute;
   bottom: -20px;
   right: -24px;
-  background: var(--gold);
+  background: var(--green);
   padding: 28px 32px;
   text-align: center;
 }
@@ -665,20 +674,16 @@ nav.scrolled {
   left: -16px;
   width: 80px;
   height: 80px;
-  border: 2px solid var(--gold);
-  opacity: 0.3;
+  border: 2px solid var(--green);
+  opacity: 0.25;
 }
 .mv-tabs {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
   margin-top: 44px;
   border: 1px solid var(--border);
 }
 .mv-tab {
   padding: 28px 32px;
   border-bottom: 1px solid var(--border);
-  position: relative;
   transition: background 0.3s;
 }
 .mv-tab:last-child {
@@ -691,7 +696,7 @@ nav.scrolled {
   font-size: 10px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--green);
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -701,7 +706,7 @@ nav.scrolled {
   content: "";
   width: 20px;
   height: 1px;
-  background: var(--gold);
+  background: var(--green);
 }
 .mv-tab-text {
   font-size: 14px;
@@ -725,13 +730,13 @@ nav.scrolled {
   transition: background 0.3s;
 }
 .value-card:hover {
-  background: var(--gold-pale);
+  background: var(--green-pale);
 }
 .value-num {
   font-family: "Cormorant Garamond", serif;
   font-size: 72px;
   font-weight: 300;
-  color: var(--gold);
+  color: var(--green);
   opacity: 0.12;
   line-height: 1;
   position: absolute;
@@ -741,7 +746,7 @@ nav.scrolled {
 .value-icon-line {
   width: 32px;
   height: 2px;
-  background: var(--gold);
+  background: var(--green);
   margin-bottom: 20px;
 }
 .value-title {
@@ -763,16 +768,12 @@ nav.scrolled {
   grid-template-columns: 1fr 2fr;
   gap: 100px;
   align-items: start;
-  margin-top: 0;
 }
 .diff-sticky {
   position: sticky;
   top: 120px;
 }
 .diff-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
   border: 1px solid var(--border);
 }
 .diff-item {
@@ -781,9 +782,9 @@ nav.scrolled {
   display: flex;
   gap: 28px;
   align-items: flex-start;
-  transition: background 0.3s;
   position: relative;
   overflow: hidden;
+  transition: background 0.3s;
 }
 .diff-item:last-child {
   border-bottom: none;
@@ -795,7 +796,7 @@ nav.scrolled {
   top: 0;
   width: 0;
   height: 100%;
-  background: var(--gold-pale);
+  background: var(--green-pale);
   transition: width 0.4s ease;
   z-index: 0;
 }
@@ -810,8 +811,8 @@ nav.scrolled {
   font-family: "Cormorant Garamond", serif;
   font-size: 44px;
   font-weight: 300;
-  color: var(--gold);
-  opacity: 0.4;
+  color: var(--green);
+  opacity: 0.5;
   line-height: 0.9;
   flex-shrink: 0;
   min-width: 52px;
@@ -833,11 +834,10 @@ nav.scrolled {
 .contact-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
   min-height: 640px;
 }
 .contact-info {
-  background: var(--navy);
+  background: var(--forest);
   padding: 100px 72px;
   display: flex;
   flex-direction: column;
@@ -857,23 +857,33 @@ nav.scrolled {
   line-height: 1;
   pointer-events: none;
 }
+/* Green accent stripe on contact panel */
+.contact-info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--green);
+}
 .contact-info .label-tag {
-  color: rgba(201, 168, 76, 0.8);
+  color: var(--green-light);
 }
 .contact-info .label-tag::before {
-  background: rgba(201, 168, 76, 0.8);
+  background: var(--green-light);
 }
 .contact-info .sec-title {
   color: #fff;
   font-size: clamp(28px, 3vw, 44px);
 }
 .contact-info .sec-title em {
-  color: var(--gold-2);
+  color: var(--green-light);
 }
 .contact-info p {
   font-size: 14px;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
   margin-bottom: 44px;
   max-width: 320px;
 }
@@ -890,8 +900,8 @@ nav.scrolled {
 .c-icon {
   width: 38px;
   height: 38px;
-  background: rgba(201, 168, 76, 0.15);
-  border: 1px solid rgba(201, 168, 76, 0.25);
+  background: rgba(46, 204, 113, 0.12);
+  border: 1px solid rgba(46, 204, 113, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -901,7 +911,7 @@ nav.scrolled {
 }
 .c-val {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.65;
 }
 .contact-form-wrap {
@@ -920,7 +930,7 @@ nav.scrolled {
 }
 .form-title em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--green);
 }
 .form-grid {
   display: grid;
@@ -959,7 +969,7 @@ nav.scrolled {
 .field-input:focus,
 .field-select:focus,
 .field-textarea:focus {
-  border-color: var(--gold);
+  border-color: var(--green);
   background: var(--surface);
 }
 .field-select {
@@ -975,7 +985,7 @@ nav.scrolled {
   height: 90px;
 }
 .btn-submit {
-  background: var(--gold);
+  background: var(--green);
   color: #fff;
   padding: 16px;
   width: 100%;
@@ -991,7 +1001,7 @@ nav.scrolled {
   margin-top: 8px;
 }
 .btn-submit:hover {
-  background: var(--navy);
+  background: var(--green-dark);
   transform: translateY(-2px);
 }
 
@@ -1011,7 +1021,7 @@ footer {
   color: var(--text);
 }
 .footer-logo-accent {
-  color: var(--gold);
+  color: var(--green);
 }
 .footer-center {
   font-family: "Cormorant Garamond", serif;
@@ -1056,10 +1066,6 @@ footer {
   animation-delay: 0.46s;
   opacity: 0;
 }
-.delay-5 {
-  animation-delay: 0.58s;
-  opacity: 0;
-}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
@@ -1080,10 +1086,7 @@ footer {
     display: none;
   }
   .hero-left {
-    padding: 130px 24px 80px;
-  }
-  .marquee-band {
-    display: none;
+    padding: 100px 24px 80px;
   }
   .slogan-section {
     grid-template-columns: 1fr;
