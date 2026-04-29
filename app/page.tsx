@@ -532,7 +532,7 @@ export default function JGTSLandingGreen() {
               <div className="c-item">
                 <div className="c-icon">📞</div>
                 <div>
-                  <div className="c-val">+258 82 832 9180</div>
+                  {/* <div className="c-val">+258 82 832 9180</div> */}
                   <div className="c-val">+258 84 106 7083</div>
                   <div className="c-val">+258 87 210 6708</div>
                 </div>
