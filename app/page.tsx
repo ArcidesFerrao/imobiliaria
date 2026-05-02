@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function JGTSLandingGreen() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,9 +37,10 @@ export default function JGTSLandingGreen() {
 
       {/* NAV */}
       <nav className={scrolled ? "scrolled" : ""}>
-        <div className="nav-logo">
+        <Image src="/icon-jgts.png" alt="Logo JGTS" width={86} height={86} />
+        {/* <div className="nav-logo">
           JGTS <span className="nav-logo-accent">—</span> Imobiliária
-        </div>
+        </div> */}
         <ul className="nav-center">
           <li>
             <a onClick={() => scrollTo("servicos")}>Serviços</a>
@@ -177,13 +179,19 @@ export default function JGTSLandingGreen() {
 
       {/* SLOGAN */}
       <div className="slogan-section">
-        <div className="slogan-side-label">
+        <Image
+          src="/jgts-icon.png"
+          alt="Ícone de casa"
+          width={200}
+          height={200}
+        />
+        {/* <div className="slogan-side-label">
           Icone
           <br />
           oficial
           <br />
           JGTS
-        </div>
+        </div> */}
         <blockquote className="slogan-quote">
           JGTS — Imobiliária:
           <br />
