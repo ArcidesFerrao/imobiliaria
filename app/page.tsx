@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import ContactForm from "./components/ContactForm";
 
 export default function JGTSLandingGreen() {
   const [scrolled, setScrolled] = useState(false);
@@ -555,7 +556,8 @@ export default function JGTSLandingGreen() {
               </div>
             </div>
           </div>
-          <div className="contact-form-wrap">
+          <ContactForm />
+          {/* <div className="contact-form-wrap">
             <div className="form-title">
               Envie uma <em>mensagem</em>
             </div>
@@ -605,7 +607,7 @@ export default function JGTSLandingGreen() {
               />
             </div>
             <button className="btn-submit">Enviar Mensagem</button>
-          </div>
+          </div> */}
         </div>
       </section>
 
