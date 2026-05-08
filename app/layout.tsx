@@ -3,8 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "JGTS Imobiliária",
-  description:
-    "A JGTS Imobiliária é uma empresa especializada em aluguel de imóveis, oferecendo uma ampla variedade de opções para atender às necessidades dos nossos clientes",
+  description: "Onde o seu sonho encontra endereço",
+  icons: {
+    icon: "/icon-jgts.png",
+  },
 };
 
 export default function RootLayout({

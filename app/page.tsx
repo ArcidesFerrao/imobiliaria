@@ -546,11 +546,11 @@ export default function JGTSLandingGreen() {
                   <div className="c-val">+258 87 210 6708</div>
                 </div>
               </div>
-              <div className="c-item">
+              <div className="c-item items-center">
                 <div className="c-icon">✉️</div>
-                <div className="c-val">joaquimd564@gmail.com</div>
+                <div className="c-val">contacto@jgtsimobiliaria.com</div>
               </div>
-              <div className="c-item">
+              <div className="c-item items-center">
                 <div className="c-icon">📍</div>
                 <div className="c-val">Maputo — Boane, Moçambique</div>
               </div>
