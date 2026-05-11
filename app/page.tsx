@@ -107,7 +107,13 @@ export default function JGTSLandingGreen() {
         </div>
         <div className="hero-right">
           <div className="hero-right-inner">
-            <div className="hero-arch">
+            <Image
+              src="/assets/hero-image.jpg"
+              alt="Imagem do Hero"
+              width={800}
+              height={800}
+            />
+            <div className="hero-arch opacity-50">
               <svg
                 width="140"
                 height="160"
@@ -267,6 +273,12 @@ export default function JGTSLandingGreen() {
             <div className="about-corner-el" />
             <div className="about-frame">
               <div className="about-frame-inner">
+                <Image
+                  src="/assets/about-image.jpg"
+                  alt="Sobre a JGTS"
+                  width={800}
+                  height={800}
+                />
                 <svg
                   width="120"
                   height="160"
